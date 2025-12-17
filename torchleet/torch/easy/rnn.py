@@ -99,10 +99,25 @@ class RNNModel(nn.Module):
         return x
 
 
+@app.class_definition
+class RNNModel2(nn.Module):
+    def __init__(self):
+        super().__init__()
+
+        self.rnn = nn.RNN(1, 10, batch_first=True)
+        self.linear = nn.Linear(10, 1)
+
+    def forward(self, x):
+        x, _ = self.rnn(x)
+        x = self.linear(x[:, -1, :])
+        
+        return x
+
+
 @app.cell
 def _(X_seq, y_seq):
     # Initialize the model, loss function, and optimizer
-    model = RNNModel()
+    model = RNNModel2()
     criterion = nn.MSELoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
 
