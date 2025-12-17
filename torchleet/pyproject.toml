@@ -1,5 +1,5 @@
 [project]
-dependencies = ["pandas>=2.3.3,<3", "tensorboard>=2.20.0,<3", "torchvision>=0.24.1,<0.25"]
+dependencies = ["pandas>=2.3.3,<3", "tensorboard>=2.20.0,<3", "torchvision>=0.24.1,<0.25", "matplotlib>=3.10.8,<4"]
 name = "torchleet"
 requires-python = ">= 3.13"
 version = "0.1.0"
