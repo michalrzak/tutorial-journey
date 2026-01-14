@@ -6,4 +6,5 @@ runs/**
 data/**
 !data/.gitkeep
 **/*.pth
+**/__marimo__/**
 
